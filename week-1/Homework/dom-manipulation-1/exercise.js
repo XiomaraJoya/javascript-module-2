@@ -58,12 +58,12 @@ Write JavaScript below that changes the background colour of the page when the '
 */
 
 let changeCol = document.querySelector("#bgrChangeBtn");
-changeCol.addEventListener("click", changecolour);
+changeCol.addEventListener("click", changeColour);
 
-function changecolour() {
+function changeColour() {
     let body = document.querySelector("body");
  
-    body.style.backgroundColor = "green";
+    body.style.backgroundColor = "#33FFFF";
     
 }
 
@@ -73,8 +73,15 @@ Task 4
 
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
+let addTxt = document.querySelector("#addTextBtn");
+addTxt.addEventListener("click", addText);
 
-
+function addText(){
+    let paragraph = document.createElement("p");
+    let mainArticles = document.querySelector("#mainArticles");    
+    mainArticles.appendChild(paragraph);
+    paragraph.innerText = "New paragraph"; 
+}
 
 /*
 Task 5
@@ -82,8 +89,22 @@ Task 5
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
+let largestLinkBtn = document.querySelector("#largestLinksBtn");
+ largestLinkBtn.addEventListener("click", largestLinks);
 
-
+ function largestLinks() {
+    const links=document.querySelectorAll("a");
+    console.log (links);
+    links.forEach(e=>e.style.fontSize = "x-large");
+    document.querySelector("#addTextBtn").addEventListener("click", (e) => {
+        e.preventDefault()
+        const text = "New paragraph";
+        const p = document.createElement("p");
+        p.textContent = text
+        const articulo = document.querySelector("#mainArticles");
+        articulo.appendChild(p);
+    })
+}
 /*
 Task 6
 ======
@@ -101,4 +122,3 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
-
