@@ -1,21 +1,45 @@
-/*
-Task 1
+
+/*Task 1
 =======
 Write JavaScript below that logs:
     1. all the "p" element nodes of the document,
-    --> should log a list of nodes with a length of 6
+    --> should log a list of nodes with a length of 6*/
+    console.log(document.querySelectorAll("p"))
+let pArray = Array.from(document.querySelectorAll("p"));
+pArray.forEach((i) => {
+    console.log(i)
+        //    todoList.appendChild(generateTodoDOM(todo))
+    })
 
-    2. the first div element node
-    --> should log the ".site-header" node
 
-    3. the element with id "jumbotron-text"
-    --> should log the "#jumbotron-text" node
+   /* 2. the first div element node
+    --> should log the ".site-header" node*/
+    /*let divArray = Array.from(document.querySelectorAll("div"));
+    const first = divList [0];
+console.log(first);  HECHO CON LIZY Y LUIS*/ 
 
-    4. all the "p" elements of contained inside  the .primary-content element node
-    --> should log a list of nodes with a length of 3
+let divArray = Array.from(document.querySelectorAll("div"));
+console.log(divArray[0])
 
-*/
 
+
+    /*3. the element with id "jumbotron-text"
+    --> should log the "#jumbotron-text" node*/
+    console.log(document.querySelector("#jumbotron-text"));
+
+
+   /* 4. all the "p" elements of contained inside  the .primary-content element node
+    --> should log a list of nodes with a length of 3 */
+    let prim_cont = document.querySelector(".primary-content");
+// let p_in_prim = prim_cont.querySelectorAll("p");
+// console.log(p_in_prim);
+
+console.log(document.querySelector(".primary-content").querySelectorAll("p"));
+
+
+
+
+    
 
 /*
 Task 2
