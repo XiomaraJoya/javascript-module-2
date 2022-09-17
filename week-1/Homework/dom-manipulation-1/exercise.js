@@ -31,15 +31,9 @@ console.log(divArray[0])
    /* 4. all the "p" elements of contained inside  the .primary-content element node
     --> should log a list of nodes with a length of 3 */
     let prim_cont = document.querySelector(".primary-content");
-// let p_in_prim = prim_cont.querySelectorAll("p");
-// console.log(p_in_prim);
-
 console.log(document.querySelector(".primary-content").querySelectorAll("p"));
 
 
-
-
-    
 
 /*
 Task 2
@@ -47,6 +41,13 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
+
+let myButton = document.querySelector("#alertBtn");
+myButton.addEventListener("click", alertSomething);
+
+function alertSomething() {
+  alert("Thanks for visiting Bikes for Refugees!");
+}
 
 
 /*
@@ -56,6 +57,15 @@ Task 3
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
 
+let changeCol = document.querySelector("#bgrChangeBtn");
+changeCol.addEventListener("click", changecolour);
+
+function changecolour() {
+    let body = document.querySelector("body");
+ 
+    body.style.backgroundColor = "green";
+    
+}
 
 /*
 Task 4
