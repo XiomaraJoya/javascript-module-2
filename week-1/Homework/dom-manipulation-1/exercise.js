@@ -67,6 +67,9 @@ function changeColour() {
     
 }
 
+
+
+
 /*
 Task 4
 ======
@@ -124,3 +127,18 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
+
+var colours= ["black", "purple", "pink", "gray","green"]
+
+var buttonChange = document.querySelector("#bgrChangeBtn");
+
+let i = 0
+buttonChange.addEventListener("click", changeColour);
+function changeColour() {
+    document.body.style.backgroundColor = colours[i]
+     if (i < colours.length - 1) {
+        i++;
+    } else {
+        i = 0;
+    }
+}
