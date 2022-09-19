@@ -132,8 +132,9 @@ var colours= ["black", "purple", "pink", "gray","green"]
 
 var buttonChange = document.querySelector("#bgrChangeBtn");
 
-let i = 0
+
 buttonChange.addEventListener("click", changeColour);
+let i = 0
 function changeColour() {
     document.body.style.backgroundColor = colours[i]
      if (i < colours.length - 1) {
