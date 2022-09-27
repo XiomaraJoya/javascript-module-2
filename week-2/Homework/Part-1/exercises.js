@@ -13,10 +13,15 @@
  *      .....
  * </div>
  */
-function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
-}
+ function exerciseOne(arrayOfPeople) {
 
+  let content = document.querySelector("#content");
+
+  arrayOfPeople.forEach(person => {
+    content.appendChild(document.createElement("h1")).textContent = person["name"];
+    content.appendChild(document.createElement("h2")).textContent = person["job"];
+  })
+}
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
@@ -25,12 +30,24 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
+
+
+
   //Write your code in here
 }
+function exerciseTwo(shopping) {
+  //Write your code in here
+  let content = document.querySelector("#content");
+  let ulEl = document.createElement("ul");
+  content.appendChild(ulEl);
+  shopping.forEach(item => {
+    ulEl.appendChild(document.createElement("li")).textContent = item;
+  })
+}
+
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
-
     const books = [
         {
             title: "The Design of Everyday Things",
@@ -48,28 +65,47 @@ function exerciseTwo(shopping) {
             alreadyRead: true
         }
     ];
-
     Iterate through the array of books.
     - For each book, create a <p> element with the book title and author and append it to the page.
     - Use a <ul> and <li> to display the books.
     - Add an <img> to each book that links to a URL of the book cover.
     - Change the style of the book depending on whether you have read it (green) or not (red).
-
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+
+//Write your code in here
+
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  let ulEl1 = document.createElement("ul");
+  content.appendChild(ulEl1);
+  ulEl1.className += "toFlex"
+
+  books.forEach((book, index) => {
+
+    let liEl1 = document.createElement("li");
+    ulEl1.appendChild(liEl1);
+
+    let pEl = document.createElement("p");
+    liEl1.appendChild(pEl);
+    pEl.textContent = book.title + " - " + book.author;
+    pEl.className = "toPadding"
+
+    let imgEl = document.createElement("img");
+    imgEl.src = "./img" + (index + 1) + ".jpg";
+    liEl1.appendChild(imgEl);
+    imgEl.className = "toPadding"
+    if (book.alreadyRead === true) {
+      liEl1.className += "bookRead"
+    } else {
+      liEl1.className += "bookUnRead"
+    }
+  })
 }
 
 //
-//
-//
-//
 // DO NOT EDIT BELOW HERE
-//
-//
-//
-//
+
 
 let people = [
   { name: "Chris", job: "Teacher" },
@@ -87,12 +123,12 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: true
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: false
   },
   {
     title: "The Pragmatic Programmer",

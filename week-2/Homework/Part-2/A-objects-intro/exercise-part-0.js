@@ -8,6 +8,11 @@ Try to think of as many properties as you can!
 
 let laptop = {
     brand: "Lenovo",
-    screenSize: 13,
+    screenSize: 15,
     isTouchscreen: true,
+    model: "ideapad330",
+    color: "black",
+
+
   };
+  
