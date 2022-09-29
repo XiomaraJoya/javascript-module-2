@@ -10,14 +10,14 @@ var kitten = {
 };
 
 var laptop = {
-    brand: "Lenovo"
+    brand: "Lenovo",
     ram:"5GB",
 };
 
 var phone = {
     operatingSystem: "iOS",
     hasStylus: true,
-    megaPixels 12,
+    megaPixels: 12,
     batteryLife: "24 hours",
 };
 
